@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Summary List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Published on</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let summary of summaries | async">
+          <td>{{summary.title}}</td>
+          <td>{{summary.author}}</td>
+          <td>{{summary.publishedOn}}</td>
+          <td><button (click)="deleteSummary(summary.id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateSummary(summary.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="summaryDetails(summary.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
